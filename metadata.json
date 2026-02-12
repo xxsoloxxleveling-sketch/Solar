@@ -1,0 +1,8 @@
+{
+  "name": "Aryian Solar",
+  "description": "A high-end, luxury solar energy website featuring AI-powered roof visualization and intelligent ROI calculations.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
