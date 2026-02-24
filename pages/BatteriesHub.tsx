@@ -5,76 +5,76 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Battery, Zap, Server } from 'lucide-react';
 import { ProductPager, PagerProduct } from '../components/ProductPager';
 
+const categories = [
+    {
+        title: 'Utility-Scale (Container ESS)',
+        desc: 'Massive energy reserves for grid stabilization and solar farms. Up to 3.7MWh per 20ft container.',
+        icon: Server,
+        link: '/products/batteries/aes-ess-container',
+        image: '/images/homepage_hero_desktop_1771580991310.png'
+    },
+    {
+        title: 'Commercial & Industrial (Cabinet ESS)',
+        desc: 'Modular, liquid-cooled 215kWh cabinets designed for peaker plant replacement and commercial backup.',
+        icon: Server,
+        link: '/contact', // Placeholder until detail page exists
+        image: '/images/inverter_central_1771581042359.png'
+    },
+    {
+        title: 'Residential Storage',
+        desc: 'Stackable, intelligent LFP batteries for whole-home backup and energy independence.',
+        icon: Battery,
+        link: '/contact', // Placeholder until detail page exists
+        image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2944&auto=format&fit=crop'
+    }
+];
+
+const pagerProducts: PagerProduct[] = [
+    {
+        id: 'bat-mega',
+        name: 'AES-MegaBlock 3.7MWh',
+        marketEquivalent: 'Tesla Megapack / Sungrow PowerTitan',
+        specs: [
+            { label: 'Capacity', value: '3.72 MWh' },
+            { label: 'Cell Type', value: 'LFP (Lithium Iron Phosphate)' },
+            { label: 'Cooling', value: 'Liquid Cooled' },
+            { label: 'Cycle Life', value: '10,000+ Cycles' },
+        ],
+        description: 'Massive, scalable energy storage for utility projects. Delivered pre-assembled in an IP55 rated enclosure for immediate grid connection.',
+        image: '/images/homepage_hero_desktop_1771580991310.png',
+        link: '/products/batteries/aes-ess-container'
+    },
+    {
+        id: 'bat-cni',
+        name: 'AES-Cabinet ESS 215kWh',
+        marketEquivalent: 'Huawei LUNA2000 C&I / BYD CHESS',
+        specs: [
+            { label: 'Capacity', value: '215 kWh' },
+            { label: 'Scalability', value: 'Up to 10 Units Series' },
+            { label: 'Safety', value: 'Aerosol Fire Suppression' },
+            { label: 'Footprint', value: 'Compact Outdoor' },
+        ],
+        description: 'The ultimate commercial backup and peak-shaving solution. Modular design allows for precise capacity scaling to match facility needs.',
+        image: '/images/inverter_central_1771581042359.png',
+        link: '/contact'
+    },
+    {
+        id: 'bat-res',
+        name: 'AES-PowerWall 10kWh',
+        marketEquivalent: 'Tesla Powerwall / LG Chem RESU',
+        specs: [
+            { label: 'Capacity', value: '10.2 kWh' },
+            { label: 'Continuous Output', value: '5 kW' },
+            { label: 'Design', value: 'Wall-Mounted' },
+            { label: 'Chemistry', value: 'Safe LFP Technology' },
+        ],
+        description: 'Reliable residential backup. Ensures critical loads remain powered during outages and maximizes solar self-consumption.',
+        image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2944&auto=format&fit=crop',
+        link: '/contact'
+    }
+];
+
 const BatteriesHub: React.FC = () => {
-    const categories = [
-        {
-            title: 'Utility-Scale (Container ESS)',
-            desc: 'Massive energy reserves for grid stabilization and solar farms. Up to 3.7MWh per 20ft container.',
-            icon: Server,
-            link: '/products/batteries/aes-ess-container',
-            image: '/images/homepage_hero_desktop_1771580991310.png'
-        },
-        {
-            title: 'Commercial & Industrial (Cabinet ESS)',
-            desc: 'Modular, liquid-cooled 215kWh cabinets designed for peaker plant replacement and commercial backup.',
-            icon: Server,
-            link: '/contact', // Placeholder until detail page exists
-            image: '/images/inverter_central_1771581042359.png'
-        },
-        {
-            title: 'Residential Storage',
-            desc: 'Stackable, intelligent LFP batteries for whole-home backup and energy independence.',
-            icon: Battery,
-            link: '/contact', // Placeholder until detail page exists
-            image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2944&auto=format&fit=crop'
-        }
-    ];
-
-    const pagerProducts: PagerProduct[] = [
-        {
-            id: 'bat-mega',
-            name: 'AES-MegaBlock 3.7MWh',
-            marketEquivalent: 'Tesla Megapack / Sungrow PowerTitan',
-            specs: [
-                { label: 'Capacity', value: '3.72 MWh' },
-                { label: 'Cell Type', value: 'LFP (Lithium Iron Phosphate)' },
-                { label: 'Cooling', value: 'Liquid Cooled' },
-                { label: 'Cycle Life', value: '10,000+ Cycles' },
-            ],
-            description: 'Massive, scalable energy storage for utility projects. Delivered pre-assembled in an IP55 rated enclosure for immediate grid connection.',
-            image: '/images/homepage_hero_desktop_1771580991310.png',
-            link: '/products/batteries/aes-ess-container'
-        },
-        {
-            id: 'bat-cni',
-            name: 'AES-Cabinet ESS 215kWh',
-            marketEquivalent: 'Huawei LUNA2000 C&I / BYD CHESS',
-            specs: [
-                { label: 'Capacity', value: '215 kWh' },
-                { label: 'Scalability', value: 'Up to 10 Units Series' },
-                { label: 'Safety', value: 'Aerosol Fire Suppression' },
-                { label: 'Footprint', value: 'Compact Outdoor' },
-            ],
-            description: 'The ultimate commercial backup and peak-shaving solution. Modular design allows for precise capacity scaling to match facility needs.',
-            image: '/images/inverter_central_1771581042359.png',
-            link: '/contact'
-        },
-        {
-            id: 'bat-res',
-            name: 'AES-PowerWall 10kWh',
-            marketEquivalent: 'Tesla Powerwall / LG Chem RESU',
-            specs: [
-                { label: 'Capacity', value: '10.2 kWh' },
-                { label: 'Continuous Output', value: '5 kW' },
-                { label: 'Design', value: 'Wall-Mounted' },
-                { label: 'Chemistry', value: 'Safe LFP Technology' },
-            ],
-            description: 'Reliable residential backup. Ensures critical loads remain powered during outages and maximizes solar self-consumption.',
-            image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2944&auto=format&fit=crop',
-            link: '/contact'
-        }
-    ];
-
     return (
         <>
             <PageHeader title="Energy Storage Systems" subtitle="Next-generation LFP batteries built for safety and unyielding power." image="/images/homepage_hero_desktop_1771580991310.png" />

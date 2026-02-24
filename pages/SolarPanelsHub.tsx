@@ -3,77 +3,78 @@ import { Section, PageHeader, Button } from '../components/UIComponents';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sun, Home, Factory } from 'lucide-react';
+import { ProductPager, PagerProduct } from '../components/ProductPager';
+
+const categories = [
+    {
+        title: 'Utility-Scale (N-Type TOPCon)',
+        desc: 'Maximum energy yield for massive solar farms. Bifacial double-glass modules exceeding 700W output.',
+        icon: Sun,
+        link: '/products/panels/aes-700',
+        image: '/images/solar_panel_utility_1771581094254.png'
+    },
+    {
+        title: 'Commercial & Industrial (C&I)',
+        desc: 'Optimized size and weight for commercial rooftops with high reliability and PID resistance.',
+        icon: Factory,
+        link: '/contact', // Placeholder until detail page exists
+        image: '/images/product_prompt_2.jpg'
+    },
+    {
+        title: 'Residential Aesthetic',
+        desc: 'All-black appearance for premium residential installations. High efficiency in a compact form factor.',
+        icon: Home,
+        link: '/contact', // Placeholder until detail page exists
+        image: '/images/product_prompt_3.jpg'
+    }
+];
+
+const pagerProducts: PagerProduct[] = [
+    {
+        id: 'aes-700',
+        name: 'AES-Vertex 700W+',
+        marketEquivalent: 'Trina Vertex Bifacial / Jinko Tiger Neo',
+        specs: [
+            { label: 'Max Output', value: '710W' },
+            { label: 'Efficiency', value: '22.8%' },
+            { label: 'Cell Technology', value: 'N-Type TOPCon' },
+            { label: 'Degradation (30yr)', value: '0.4% / yr' },
+        ],
+        description: 'Massive energy yield for utility-scale deployments. Engineered for harsh environments with double-glass framing.',
+        image: '/images/solar_panel_utility_1771581094254.png',
+        link: '/products/panels'
+    },
+    {
+        id: 'aes-600',
+        name: 'AES-Tiger 600W C&I',
+        marketEquivalent: 'Jinko Tiger N-Type / Canadian Solar HiKu7',
+        specs: [
+            { label: 'Max Output', value: '600W' },
+            { label: 'Efficiency', value: '22.3%' },
+            { label: 'Weight', value: '28kg' },
+            { label: 'PID Resistance', value: 'Double Tested' },
+        ],
+        description: 'Optimized size and weight for commercial rooftops, maximizing roof space without compromising roof load limits.',
+        image: '/images/product_prompt_2.jpg',
+        link: '/contact'
+    },
+    {
+        id: 'aes-430',
+        name: 'AES-HiMO 430W Black',
+        marketEquivalent: 'Longi Hi-MO 6 Explorer / REC Alpha',
+        specs: [
+            { label: 'Max Output', value: '430W' },
+            { label: 'Efficiency', value: '22.0%' },
+            { label: 'Aesthetics', value: 'All-Black' },
+            { label: 'Warranty', value: '25 Years' },
+        ],
+        description: 'Premium ultra-black appearance for residential applications. High density cell layout for maximum power in tight spaces.',
+        image: '/images/product_prompt_3.jpg',
+        link: '/contact'
+    }
+];
 
 const SolarPanelsHub: React.FC = () => {
-    const categories = [
-        {
-            title: 'Utility-Scale (N-Type TOPCon)',
-            desc: 'Maximum energy yield for massive solar farms. Bifacial double-glass modules exceeding 700W output.',
-            icon: Sun,
-            link: '/products/panels/aes-700',
-            image: '/images/solar_panel_utility_1771581094254.png'
-        },
-        {
-            title: 'Commercial & Industrial (C&I)',
-            desc: 'Optimized size and weight for commercial rooftops with high reliability and PID resistance.',
-            icon: Factory,
-            link: '/contact', // Placeholder until detail page exists
-            image: '/images/product_prompt_2.jpg'
-        },
-        {
-            title: 'Residential Aesthetic',
-            desc: 'All-black appearance for premium residential installations. High efficiency in a compact form factor.',
-            icon: Home,
-            link: '/contact', // Placeholder until detail page exists
-            image: '/images/product_prompt_3.jpg'
-        }
-    ];
-
-    const pagerProducts: PagerProduct[] = [
-        {
-            id: 'aes-700',
-            name: 'AES-Vertex 700W+',
-            marketEquivalent: 'Trina Vertex Bifacial / Jinko Tiger Neo',
-            specs: [
-                { label: 'Max Output', value: '710W' },
-                { label: 'Efficiency', value: '22.8%' },
-                { label: 'Cell Technology', value: 'N-Type TOPCon' },
-                { label: 'Degradation (30yr)', value: '0.4% / yr' },
-            ],
-            description: 'Massive energy yield for utility-scale deployments. Engineered for harsh environments with double-glass framing.',
-            image: '/images/solar_panel_utility_1771581094254.png',
-            link: '/products/panels'
-        },
-        {
-            id: 'aes-600',
-            name: 'AES-Tiger 600W C&I',
-            marketEquivalent: 'Jinko Tiger N-Type / Canadian Solar HiKu7',
-            specs: [
-                { label: 'Max Output', value: '600W' },
-                { label: 'Efficiency', value: '22.3%' },
-                { label: 'Weight', value: '28kg' },
-                { label: 'PID Resistance', value: 'Double Tested' },
-            ],
-            description: 'Optimized size and weight for commercial rooftops, maximizing roof space without compromising roof load limits.',
-            image: '/images/product_prompt_2.jpg',
-            link: '/contact'
-        },
-        {
-            id: 'aes-430',
-            name: 'AES-HiMO 430W Black',
-            marketEquivalent: 'Longi Hi-MO 6 Explorer / REC Alpha',
-            specs: [
-                { label: 'Max Output', value: '430W' },
-                { label: 'Efficiency', value: '22.0%' },
-                { label: 'Aesthetics', value: 'All-Black' },
-                { label: 'Warranty', value: '25 Years' },
-            ],
-            description: 'Premium ultra-black appearance for residential applications. High density cell layout for maximum power in tight spaces.',
-            image: '/images/product_prompt_3.jpg',
-            link: '/contact'
-        }
-    ];
-
     return (
         <>
             <PageHeader title="Photovoltaic Modules" subtitle="Precision-engineered solar panels for every scale." image="/images/solar_panel_utility_1771581094254.png" />

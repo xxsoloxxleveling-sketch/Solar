@@ -142,7 +142,7 @@ export const PageHeader: React.FC<{ title: string; subtitle?: string; image?: st
         alt={title}
         className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-primary/70 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-[#0f2847]/70" />
     </div>
     <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
       <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4 animate-slide-up">{title}</h1>

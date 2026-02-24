@@ -43,7 +43,7 @@ export const ProductPager: React.FC<ProductPagerProps> = ({ categoryTitle, produ
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-                        <span className="text-white text-xs font-bold uppercase tracking-widest px-3 py-1 bg-white/20 backdrop-blur-md inline-block rounded-sm">
+                        <span className="text-white text-xs font-bold uppercase tracking-widest px-3 py-1 bg-black/60 inline-block rounded-sm">
                             Comparable to: {currentProduct.marketEquivalent}
                         </span>
                     </div>
