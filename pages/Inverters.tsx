@@ -1,7 +1,8 @@
 import React from 'react';
-import { Section, PageHeader, Button } from '../components/UIComponents';
+import { Section, PageHeader, Button, Tabs } from '../components/UIComponents';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
-import { Download, CheckCircle, FileText } from 'lucide-react';
+import { Download, CheckCircle, FileText, Zap, Activity, Shield, ActivitySquare } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const effData = [
   { load: '10%', eff: 96.5 },
@@ -24,7 +25,12 @@ const Inverters: React.FC = () => {
         <div className="bg-gray-900 text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-blue-900/10 z-10 pointer-events-none"></div>
           <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-20">
-            <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
               <span className="text-secondary font-bold uppercase tracking-[0.2em] text-sm">Industrial Inverters</span>
               <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-none">AES-INV <br /><span className="text-gray-400">Smart Grid</span></h1>
               <p className="text-xl text-gray-300 max-w-lg leading-relaxed">
@@ -50,10 +56,15 @@ const Inverters: React.FC = () => {
                 <Button variant="primary" icon className="hover:-translate-y-1 shadow-lg shadow-blue-900/50">Contact Sales</Button>
                 <Button variant="outline" className="border-gray-500 text-gray-300 hover:text-white hover:border-white">Download Datasheet <Download className="ml-2 h-4 w-4" /></Button>
               </div>
-            </div>
-            <div className="relative h-[400px] lg:h-[600px] flex items-center justify-center">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative h-[400px] lg:h-[600px] flex items-center justify-center"
+            >
               <img src="https://images.unsplash.com/photo-1620288627223-537a242c9116?q=80&w=2609&auto=format&fit=crop" className="max-h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" alt="Inverter Product" />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -86,75 +97,129 @@ const Inverters: React.FC = () => {
             <h3 className="text-2xl font-bold text-gray-900">Advanced Features</h3>
             <div className="grid grid-cols-1 gap-6">
               {[
-                { title: 'Smart I-V Curve Diagnosis', desc: 'Online I-V curve analysis with 100% scanning coverage.' },
-                { title: 'Arc Fault Circuit Interrupter', desc: 'AI-powered AFCI proactively detects and breaks arcs in <0.5s.' },
-                { title: 'IP66 Protection', desc: 'Completely sealed design for harsh desert and marine environments.' },
-                { title: 'Grid Support', desc: 'Active and reactive power control for grid stability.' }
-              ].map((item, i) => (
-                <div key={i} className="flex gap-4 p-4 border border-gray-100 rounded-sm hover:border-blue-100 hover:bg-blue-50/30 transition-colors">
-                  <CheckCircle className="h-6 w-6 text-secondary shrink-0" />
-                  <div>
-                    <h4 className="font-bold text-gray-900 text-lg mb-1">{item.title}</h4>
-                    <p className="text-gray-500">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+                { title: 'Smart I-V Curve Diagnosis', desc: 'Online I-V curve analysis with 100% scanning coverage.', icon: ActivitySquare },
+                { title: 'Arc Fault Circuit Interrupter', desc: 'AI-powered AFCI proactively detects and breaks arcs in <0.5s.', icon: Zap },
+                { title: 'IP66 Protection', desc: 'Completely sealed design for harsh desert and marine environments.', icon: Shield },
+                { title: 'Grid Support', desc: 'Active and reactive power control for grid stability.', icon: Activity }
+              ].map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    key={i}
+                    className="flex gap-4 p-4 border border-gray-100 rounded-sm hover:border-blue-100 hover:bg-blue-50/30 transition-colors"
+                  >
+                    <Icon className="h-6 w-6 text-secondary shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-lg mb-1">{item.title}</h4>
+                      <p className="text-gray-500">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
       </Section>
 
-      {/* Tech Specs Table */}
+      {/* Tech Specs Tabs */}
       <Section background="grey">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-heading font-bold text-center mb-12">Technical Specifications</h2>
-          <div className="overflow-x-auto shadow-xl rounded-sm">
-            <table className="w-full bg-white border-collapse">
-              <thead className="bg-primary text-white">
-                <tr>
-                  <th className="p-5 text-left text-sm font-bold uppercase tracking-wider">Model</th>
-                  <th className="p-5 text-left text-sm font-bold uppercase tracking-wider">AES-INV-100K</th>
-                  <th className="p-5 text-left text-sm font-bold uppercase tracking-wider">AES-INV-250K</th>
-                  <th className="p-5 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-INV-350K</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100 text-sm text-gray-700">
-                <tr>
-                  <td className="p-5 font-bold bg-gray-50">Max Input Voltage</td>
-                  <td className="p-5">1100 V</td>
-                  <td className="p-5">1500 V</td>
-                  <td className="p-5 font-bold text-primary">1500 V</td>
-                </tr>
-                <tr>
-                  <td className="p-5 font-bold bg-gray-50">Max Output Power</td>
-                  <td className="p-5">110 kW</td>
-                  <td className="p-5">275 kW</td>
-                  <td className="p-5 font-bold text-primary">350 kW</td>
-                </tr>
-                <tr>
-                  <td className="p-5 font-bold bg-gray-50">MPPT Efficiency</td>
-                  <td className="p-5">&gt;99.9%</td>
-                  <td className="p-5">&gt;99.9%</td>
-                  <td className="p-5">&gt;99.9%</td>
-                </tr>
-                <tr>
-                  <td className="p-5 font-bold bg-gray-50">Degree of Protection</td>
-                  <td className="p-5">IP66</td>
-                  <td className="p-5">IP66</td>
-                  <td className="p-5">IP66</td>
-                </tr>
-                <tr>
-                  <td className="p-5 font-bold bg-gray-50">Dimensions (WxHxD)</td>
-                  <td className="p-5">1035 x 700 x 365</td>
-                  <td className="p-5">1085 x 750 x 385</td>
-                  <td className="p-5">1100 x 800 x 400</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="mt-8 text-center">
-            <Button variant="outline" icon>Download Full Specs <FileText className="ml-2 h-4 w-4" /></Button>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-heading font-bold text-center mb-12">Technical Specifications</h2>
+            <div className="bg-white shadow-xl rounded-sm p-6">
+              <Tabs
+                tabs={[
+                  {
+                    id: 'input',
+                    label: 'DC Input',
+                    content: (
+                      <div className="overflow-x-auto">
+                        <table className="w-full border-collapse">
+                          <thead className="bg-primary text-white">
+                            <tr>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">Model</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-INV-100K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-INV-250K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-INV-350K</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-100 text-sm text-gray-700">
+                            <tr>
+                              <td className="p-4 font-bold bg-gray-50">Max Input Voltage</td>
+                              <td className="p-4">1100 V</td>
+                              <td className="p-4">1500 V</td>
+                              <td className="p-4 font-bold text-primary">1500 V</td>
+                            </tr>
+                            <tr>
+                              <td className="p-4 font-bold bg-gray-50">MPPT Voltage Range</td>
+                              <td className="p-4">200 V ~ 1000 V</td>
+                              <td className="p-4">500 V ~ 1500 V</td>
+                              <td className="p-4 font-bold text-primary">500 V ~ 1500 V</td>
+                            </tr>
+                            <tr>
+                              <td className="p-4 font-bold bg-gray-50">Number of MPPTs</td>
+                              <td className="p-4">10</td>
+                              <td className="p-4">12</td>
+                              <td className="p-4 font-bold text-primary">12 ~ 14</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    )
+                  },
+                  {
+                    id: 'output',
+                    label: 'AC Output',
+                    content: (
+                      <div className="overflow-x-auto">
+                        <table className="w-full border-collapse">
+                          <thead className="bg-primary text-white">
+                            <tr>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">Model</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-INV-100K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-INV-250K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-INV-350K</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-100 text-sm text-gray-700">
+                            <tr>
+                              <td className="p-4 font-bold bg-gray-50">Max Output Power</td>
+                              <td className="p-4">110 kW</td>
+                              <td className="p-4">275 kW</td>
+                              <td className="p-4 font-bold text-primary">350 kW</td>
+                            </tr>
+                            <tr>
+                              <td className="p-4 font-bold bg-gray-50">Max Output Current</td>
+                              <td className="p-4">167 A</td>
+                              <td className="p-4">198 A (@800V)</td>
+                              <td className="p-4 font-bold text-primary">252 A (@800V)</td>
+                            </tr>
+                            <tr>
+                              <td className="p-4 font-bold bg-gray-50">THDi</td>
+                              <td className="p-4">&lt; 3%</td>
+                              <td className="p-4">&lt; 3%</td>
+                              <td className="p-4 font-bold text-primary">&lt; 3%</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    )
+                  }
+                ]}
+              />
+            </div>
+            <div className="mt-8 text-center">
+              <Button variant="outline" icon>Download Full Specs <FileText className="ml-2 h-4 w-4" /></Button>
+            </div>
+          </motion.div>
         </div>
       </Section>
 

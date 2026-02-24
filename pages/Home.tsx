@@ -8,7 +8,16 @@ const Home: React.FC = () => {
     <>
       {/* Hero Section */}
       <div className="relative h-screen w-full overflow-hidden bg-gray-900">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center opacity-40"></div>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          poster="/images/homepage_hero_desktop_1771580991310.png"
+        >
+          <source src="/assets/hero-desktop.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-900/60 to-transparent"></div>
 
         <div className="relative z-20 h-full flex items-center px-6 md:px-16 max-w-7xl mx-auto">
@@ -82,7 +91,7 @@ const Home: React.FC = () => {
             {/* Inverters - Top Right */}
             <Link to="/products/inverters" className="relative flex-1 group overflow-hidden bg-white rounded-sm shadow-sm hover:shadow-xl transition-all duration-500">
               <img
-                src="https://images.unsplash.com/photo-1620288627223-537a242c9116?q=80&w=2609&auto=format&fit=crop" // Abstract industrial tech
+                src="/images/inverter_central_1771581042359.png" // Abstract industrial tech
                 alt="Inverters"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -95,7 +104,7 @@ const Home: React.FC = () => {
             {/* Batteries - Bottom Right */}
             <Link to="/products/batteries" className="relative flex-1 group overflow-hidden bg-white rounded-sm shadow-sm hover:shadow-xl transition-all duration-500">
               <img
-                src="https://images.unsplash.com/photo-1611416517780-eff3a13b0359?q=80&w=3149&auto=format&fit=crop" // Tech/server room look for batteries
+                src="/images/homepage_hero_desktop_1771580991310.png" // Tech/server room look for batteries
                 alt="Batteries"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -163,7 +172,7 @@ const Home: React.FC = () => {
           </div>
           <div className="relative h-[600px] bg-gray-200 rounded-sm overflow-hidden shadow-xl">
             <img
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2670&auto=format&fit=crop"
+              src="/images/about_us_desktop_1771581021471.png"
               alt="Lab Technician"
               className="w-full h-full object-cover"
             />

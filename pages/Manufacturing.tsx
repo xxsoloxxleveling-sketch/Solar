@@ -15,7 +15,7 @@ const Manufacturing: React.FC = () => {
       <PageHeader
         title="Smart Manufacturing"
         subtitle="Industry 4.0 production lines driven by automation and AI."
-        image="https://images.unsplash.com/photo-1620288627223-537a242c9116?q=80&w=2609&auto=format&fit=crop"
+        image="/images/about_us_desktop_1771581021471.png"
       />
 
       {/* Big Statistic Section */}
@@ -50,7 +50,7 @@ const Manufacturing: React.FC = () => {
             </div>
           </div>
           <div className="relative">
-            <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=2670&auto=format&fit=crop" className="rounded-sm w-full h-[500px] object-cover shadow-xl" alt="Robot Arm" />
+            <img src="/images/about_us_desktop_1771581021471.png" className="rounded-sm w-full h-[500px] object-cover shadow-xl" alt="Robot Arm" />
             <div className="absolute -bottom-6 -left-6 bg-white p-6 shadow-lg border-l-4 border-secondary hidden md:block">
               <p className="font-heading font-bold text-primary text-lg">Industry 4.0 Standard</p>
             </div>
@@ -60,7 +60,7 @@ const Manufacturing: React.FC = () => {
 
       {/* Wide Industrial Image */}
       <div className="w-full h-[400px] lg:h-[500px] relative">
-        <img src="https://images.unsplash.com/photo-1563287739-db658c1605f1?q=80&w=2670&auto=format&fit=crop" className="w-full h-full object-cover" alt="Solar Cells Production Line" />
+        <img src="/images/oem_warehouse_desktop_1771581111992.png" className="w-full h-full object-cover" alt="Solar Cells Production Line" />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <h2 className="text-white font-heading font-bold text-4xl md:text-5xl tracking-wide">Precision Engineering</h2>
         </div>

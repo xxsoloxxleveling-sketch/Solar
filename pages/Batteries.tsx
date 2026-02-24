@@ -1,7 +1,8 @@
 import React from 'react';
-import { Section, PageHeader, Button } from '../components/UIComponents';
+import { Section, PageHeader, Button, Tabs } from '../components/UIComponents';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { Download, CheckCircle, FileText, Battery } from 'lucide-react';
+import { Download, CheckCircle, FileText, Battery, Zap, Shield, Thermometer } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const cycleData = [
   { cycles: '2000', cap: 95 },
@@ -19,7 +20,12 @@ const Batteries: React.FC = () => {
         <div className="bg-gray-900 text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-blue-900/10 z-10 pointer-events-none"></div>
           <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-20">
-            <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
               <span className="text-secondary font-bold uppercase tracking-[0.2em] text-sm">Energy Storage</span>
               <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-none">AES-ESS <br /><span className="text-gray-400">Utility Scale</span></h1>
               <p className="text-xl text-gray-300 max-w-lg leading-relaxed">
@@ -45,10 +51,15 @@ const Batteries: React.FC = () => {
                 <Button variant="primary" icon className="hover:-translate-y-1 shadow-lg shadow-blue-900/50">Contact Sales</Button>
                 <Button variant="outline" className="border-gray-500 text-gray-300 hover:text-white hover:border-white">Download Datasheet <Download className="ml-2 h-4 w-4" /></Button>
               </div>
-            </div>
-            <div className="relative h-[400px] lg:h-[600px] flex items-center justify-center">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative h-[400px] lg:h-[600px] flex items-center justify-center"
+            >
               <img src="https://images.unsplash.com/photo-1611416517780-eff3a13b0359?q=80&w=3149&auto=format&fit=crop" className="max-h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 rounded-lg" alt="Battery Container" />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -85,69 +96,126 @@ const Batteries: React.FC = () => {
             <h3 className="text-2xl font-bold text-gray-900">Safety & Intelligence</h3>
             <div className="grid grid-cols-1 gap-6">
               {[
-                { title: 'LFP Chemistry', desc: 'Thermally stable Lithium Iron Phosphate cells prevent thermal runaway.' },
-                { title: 'Liquid Cooling', desc: 'Precision temperature control (diff <2°C) extends battery life by 20%.' },
-                { title: 'Smart BMS', desc: 'Cell-level monitoring with active balancing and cloud integration.' },
-                { title: 'Modular Design', desc: 'Scalable from 100kWh cabinets to multi-MWh containers.' }
-              ].map((item, i) => (
-                <div key={i} className="flex gap-4 p-4 border border-gray-100 rounded-sm hover:border-blue-100 hover:bg-blue-50/30 transition-colors">
-                  <CheckCircle className="h-6 w-6 text-secondary shrink-0" />
-                  <div>
-                    <h4 className="font-bold text-gray-900 text-lg mb-1">{item.title}</h4>
-                    <p className="text-gray-500">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+                { title: 'LFP Chemistry', desc: 'Thermally stable Lithium Iron Phosphate cells prevent thermal runaway.', icon: Shield },
+                { title: 'Liquid Cooling', desc: 'Precision temperature control (diff <2°C) extends battery life by 20%.', icon: Thermometer },
+                { title: 'Smart BMS', desc: 'Cell-level monitoring with active balancing and cloud integration.', icon: Zap },
+                { title: 'Modular Design', desc: 'Scalable from 100kWh cabinets to multi-MWh containers.', icon: Battery }
+              ].map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    key={i}
+                    className="flex gap-4 p-4 border border-gray-100 rounded-sm hover:border-blue-100 hover:bg-blue-50/30 transition-colors"
+                  >
+                    <Icon className="h-6 w-6 text-secondary shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-lg mb-1">{item.title}</h4>
+                      <p className="text-gray-500">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
       </Section>
 
-      {/* Tech Specs Table */}
+      {/* Tech Specs Tabs */}
       <Section background="grey">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-heading font-bold text-center mb-12">Technical Specifications</h2>
-          <div className="overflow-x-auto shadow-xl rounded-sm">
-            <table className="w-full bg-white border-collapse">
-              <thead className="bg-primary text-white">
-                <tr>
-                  <th className="p-5 text-left text-sm font-bold uppercase tracking-wider">Model</th>
-                  <th className="p-5 text-left text-sm font-bold uppercase tracking-wider">AES-ESS-Cabinet</th>
-                  <th className="p-5 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-ESS-Container</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100 text-sm text-gray-700">
-                <tr>
-                  <td className="p-5 font-bold bg-gray-50">Energy Capacity</td>
-                  <td className="p-5">215 kWh</td>
-                  <td className="p-5 font-bold text-primary">3.72 MWh</td>
-                </tr>
-                <tr>
-                  <td className="p-5 font-bold bg-gray-50">Rated Power</td>
-                  <td className="p-5">100 kW</td>
-                  <td className="p-5">1800 kW</td>
-                </tr>
-                <tr>
-                  <td className="p-5 font-bold bg-gray-50">Battery Chemistry</td>
-                  <td className="p-5">LFP (LiFePO4)</td>
-                  <td className="p-5">LFP (LiFePO4)</td>
-                </tr>
-                <tr>
-                  <td className="p-5 font-bold bg-gray-50">Cooling System</td>
-                  <td className="p-5">Liquid Cooling</td>
-                  <td className="p-5">Liquid Cooling</td>
-                </tr>
-                <tr>
-                  <td className="p-5 font-bold bg-gray-50">Dimensions (WxHxD)</td>
-                  <td className="p-5">1100 x 2200 x 1100 mm</td>
-                  <td className="p-5">6058 x 2896 x 2438 mm (20ft)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="mt-8 text-center">
-            <Button variant="outline" icon>Download Full Specs <FileText className="ml-2 h-4 w-4" /></Button>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-heading font-bold text-center mb-12">Technical Specifications</h2>
+            <div className="bg-white shadow-xl rounded-sm p-6">
+              <Tabs
+                tabs={[
+                  {
+                    id: 'performance',
+                    label: 'Performance Data',
+                    content: (
+                      <div className="overflow-x-auto">
+                        <table className="w-full border-collapse">
+                          <thead className="bg-primary text-white">
+                            <tr>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">Model</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-ESS-Cabinet</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-ESS-Container</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-100 text-sm text-gray-700">
+                            <tr>
+                              <td className="p-4 font-bold bg-gray-50">Energy Capacity</td>
+                              <td className="p-4">215 kWh</td>
+                              <td className="p-4 font-bold text-primary">3.72 MWh</td>
+                            </tr>
+                            <tr>
+                              <td className="p-4 font-bold bg-gray-50">Rated Power</td>
+                              <td className="p-4">100 kW</td>
+                              <td className="p-4">1800 kW</td>
+                            </tr>
+                            <tr>
+                              <td className="p-4 font-bold bg-gray-50">Battery Chemistry</td>
+                              <td className="p-4">LFP (LiFePO4)</td>
+                              <td className="p-4">LFP (LiFePO4)</td>
+                            </tr>
+                            <tr>
+                              <td className="p-4 font-bold bg-gray-50">Cooling System</td>
+                              <td className="p-4">Liquid Cooling</td>
+                              <td className="p-4">Liquid Cooling</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    )
+                  },
+                  {
+                    id: 'mechanical',
+                    label: 'Mechanical Data',
+                    content: (
+                      <div className="overflow-x-auto">
+                        <table className="w-full border-collapse">
+                          <thead className="bg-primary text-white">
+                            <tr>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">Model</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-ESS-Cabinet</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-ESS-Container</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-100 text-sm text-gray-700">
+                            <tr>
+                              <td className="p-4 font-bold bg-gray-50">Dimensions (WxHxD)</td>
+                              <td className="p-4">1100 x 2200 x 1100 mm</td>
+                              <td className="p-4 font-bold text-primary">6058 x 2896 x 2438 mm (20ft)</td>
+                            </tr>
+                            <tr>
+                              <td className="p-4 font-bold bg-gray-50">Weight</td>
+                              <td className="p-4">~2,500 kg</td>
+                              <td className="p-4">~35,000 kg</td>
+                            </tr>
+                            <tr>
+                              <td className="p-4 font-bold bg-gray-50">IP Rating</td>
+                              <td className="p-4">IP55</td>
+                              <td className="p-4">IP54</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    )
+                  }
+                ]}
+              />
+            </div>
+            <div className="mt-8 text-center">
+              <Button variant="outline" icon>Download Full Specs <FileText className="ml-2 h-4 w-4" /></Button>
+            </div>
+          </motion.div>
         </div>
       </Section>
 

@@ -10,7 +10,13 @@ import Products from './pages/Products';
 import SolarPanels from './pages/SolarPanels';
 import Inverters from './pages/Inverters';
 import Batteries from './pages/Batteries';
+import SolarPanelsHub from './pages/SolarPanelsHub';
+import InvertersHub from './pages/InvertersHub';
+import BatteriesHub from './pages/BatteriesHub';
 import Manufacturing from './pages/Manufacturing';
+import OEMServices from './pages/OEMServices';
+import QualityAssurance from './pages/QualityAssurance';
+import FacilityTour from './pages/FacilityTour';
 import Innovation from './pages/Innovation';
 import Quality from './pages/Quality';
 import Portfolio from './pages/Portfolio';
@@ -19,7 +25,7 @@ import Contact from './pages/Contact';
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = React.useMemo(() => new URL(window.location.href), [window.location.href]);
-  
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -37,13 +43,19 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/products/panels" element={<SolarPanels />} />
-            <Route path="/products/inverters" element={<Inverters />} />
-            <Route path="/products/batteries" element={<Batteries />} />
+            <Route path="/products/panels" element={<SolarPanelsHub />} />
+            <Route path="/products/panels/aes-700" element={<SolarPanels />} />
+            <Route path="/products/inverters" element={<InvertersHub />} />
+            <Route path="/products/inverters/aes-inv" element={<Inverters />} />
+            <Route path="/products/batteries" element={<BatteriesHub />} />
+            <Route path="/products/batteries/aes-ess-container" element={<Batteries />} />
             <Route path="/manufacturing" element={<Manufacturing />} />
+            <Route path="/manufacturing/quality" element={<QualityAssurance />} />
+            <Route path="/manufacturing/tour" element={<FacilityTour />} />
+            <Route path="/manufacturing/oem" element={<OEMServices />} />
             <Route path="/rnd" element={<Innovation />} />
-            <Route path="/quality" element={<Quality />} />
-            <Route path="/global" element={<Quality />} /> {/* Reusing Quality for simplicity as per plan */}
+            <Route path="/quality" element={<QualityAssurance />} /> {/* Kept root quality mapped to new Quality Assurance */}
+            <Route path="/global" element={<QualityAssurance />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/resources" element={<Home />} /> {/* Redirect to home for now or placeholder */}
             <Route path="/contact" element={<Contact />} />

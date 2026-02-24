@@ -23,13 +23,14 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Products', path: '/products' },
+    { name: 'Solar Panels', path: '/products/panels' },
+    { name: 'Energy Storage', path: '/products/batteries' },
+    { name: 'Inverters', path: '/products/inverters' },
     { name: 'Manufacturing', path: '/manufacturing' },
-    { name: 'R&D', path: '/rnd' },
+    { name: 'Virtual Tour', path: '/manufacturing/tour' },
+    { name: 'OEM', path: '/manufacturing/oem' },
     { name: 'Quality', path: '/quality' },
-    { name: 'Global', path: '/global' },
     { name: 'Portfolio', path: '/portfolio' },
-    // { name: 'Resources', path: '/resources' }, // Removed as per request to de-clutter if needed, or keep. Keeping for now but focusing on main.
     { name: 'Contact', path: '/contact' },
   ];
 
