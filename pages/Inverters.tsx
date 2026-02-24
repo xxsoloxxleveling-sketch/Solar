@@ -31,24 +31,24 @@ const Inverters: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <span className="text-secondary font-bold uppercase tracking-[0.2em] text-sm">Industrial Inverters</span>
-              <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-none">AES-INV <br /><span className="text-gray-400">Smart Grid</span></h1>
+              <span className="text-secondary font-bold uppercase tracking-[0.2em] text-sm">Residential & Light Commercial</span>
+              <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-none">AES-Nitrox <br /><span className="text-gray-400">Hybrid Series</span></h1>
               <p className="text-xl text-gray-300 max-w-lg leading-relaxed">
-                Intelligent string and central inverters with AI-driven arc fault detection and 99% max efficiency.
+                The ultimate defense against load shedding. Intelligent energy management, seamless backup, and robust net-metering export in one unit.
               </p>
 
               <div className="flex gap-8 py-6">
                 <div>
-                  <p className="text-4xl font-heading font-bold text-white">99.0%</p>
+                  <p className="text-4xl font-heading font-bold text-white">97.6%</p>
                   <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Max Efficiency</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-heading font-bold text-white">12<span className="text-xl"></span></p>
+                  <p className="text-4xl font-heading font-bold text-white">2-3<span className="text-xl"></span></p>
                   <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">MPPT Channels</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-heading font-bold text-white">350<span className="text-xl">kW</span></p>
-                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Max Power</p>
+                  <p className="text-4xl font-heading font-bold text-white">3-10<span className="text-xl">kW</span></p>
+                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Power Range</p>
                 </div>
               </div>
 
@@ -63,7 +63,7 @@ const Inverters: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative h-[400px] lg:h-[600px] flex items-center justify-center"
             >
-              <img src="https://images.unsplash.com/photo-1620288627223-537a242c9116?q=80&w=2609&auto=format&fit=crop" className="max-h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" alt="Inverter Product" />
+              <img src="/images/hybrid_inverter.png" className="max-h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" alt="Inverter Product" />
             </motion.div>
           </div>
         </div>
@@ -97,10 +97,10 @@ const Inverters: React.FC = () => {
             <h3 className="text-2xl font-bold text-gray-900">Advanced Features</h3>
             <div className="grid grid-cols-1 gap-6">
               {[
-                { title: 'Smart I-V Curve Diagnosis', desc: 'Online I-V curve analysis with 100% scanning coverage.', icon: ActivitySquare },
-                { title: 'Arc Fault Circuit Interrupter', desc: 'AI-powered AFCI proactively detects and breaks arcs in <0.5s.', icon: Zap },
-                { title: 'IP66 Protection', desc: 'Completely sealed design for harsh desert and marine environments.', icon: Shield },
-                { title: 'Grid Support', desc: 'Active and reactive power control for grid stability.', icon: Activity }
+                { title: '0ms Transfer Time', desc: 'True UPS level backup means your PCs and appliances will never restart during load shedding.', icon: ActivitySquare },
+                { title: 'Heavy Duty Backup', desc: 'Powerful enough to start 2-ton air conditioners directly on battery/solar power without tripping.', icon: Zap },
+                { title: 'Dual Output Ports', desc: 'Smart load management port allowing prioritization of critical appliances over heavy loads.', icon: Shield },
+                { title: 'Lithium Ready', desc: 'Full BMS communication with leading lithium-ion batteries. Also supports lead-acid/tubular.', icon: Activity }
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -146,29 +146,33 @@ const Inverters: React.FC = () => {
                           <thead className="bg-primary text-white">
                             <tr>
                               <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">Model</th>
-                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-INV-100K</th>
-                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-INV-250K</th>
-                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-INV-350K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-Nitrox 3K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-Nitrox 5K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-Nitrox 8K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-Nitrox 10K</th>
                             </tr>
                           </thead>
                           <tbody className="divide-y divide-gray-100 text-sm text-gray-700">
                             <tr>
-                              <td className="p-4 font-bold bg-gray-50">Max Input Voltage</td>
-                              <td className="p-4">1100 V</td>
-                              <td className="p-4">1500 V</td>
-                              <td className="p-4 font-bold text-primary">1500 V</td>
+                              <td className="p-4 font-bold bg-gray-50">Max Input Power (Solar)</td>
+                              <td className="p-4">4,500 W</td>
+                              <td className="p-4">6,500 W</td>
+                              <td className="p-4">10,400 W</td>
+                              <td className="p-4 font-bold text-primary">13,000 W</td>
                             </tr>
                             <tr>
                               <td className="p-4 font-bold bg-gray-50">MPPT Voltage Range</td>
-                              <td className="p-4">200 V ~ 1000 V</td>
-                              <td className="p-4">500 V ~ 1500 V</td>
-                              <td className="p-4 font-bold text-primary">500 V ~ 1500 V</td>
+                              <td className="p-4">120 V ~ 425 V</td>
+                              <td className="p-4">120 V ~ 425 V</td>
+                              <td className="p-4">150 V ~ 425 V</td>
+                              <td className="p-4 font-bold text-primary">200 V ~ 650 V</td>
                             </tr>
                             <tr>
                               <td className="p-4 font-bold bg-gray-50">Number of MPPTs</td>
-                              <td className="p-4">10</td>
-                              <td className="p-4">12</td>
-                              <td className="p-4 font-bold text-primary">12 ~ 14</td>
+                              <td className="p-4">2</td>
+                              <td className="p-4">2</td>
+                              <td className="p-4">2</td>
+                              <td className="p-4 font-bold text-primary">3</td>
                             </tr>
                           </tbody>
                         </table>
@@ -177,36 +181,40 @@ const Inverters: React.FC = () => {
                   },
                   {
                     id: 'output',
-                    label: 'AC Output',
+                    label: 'AC & Battery',
                     content: (
                       <div className="overflow-x-auto">
                         <table className="w-full border-collapse">
                           <thead className="bg-primary text-white">
                             <tr>
                               <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">Model</th>
-                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-INV-100K</th>
-                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-INV-250K</th>
-                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-INV-350K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-Nitrox 3K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-Nitrox 5K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-Nitrox 8K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-Nitrox 10K</th>
                             </tr>
                           </thead>
                           <tbody className="divide-y divide-gray-100 text-sm text-gray-700">
                             <tr>
-                              <td className="p-4 font-bold bg-gray-50">Max Output Power</td>
-                              <td className="p-4">110 kW</td>
-                              <td className="p-4">275 kW</td>
-                              <td className="p-4 font-bold text-primary">350 kW</td>
+                              <td className="p-4 font-bold bg-gray-50">Rated AC Output</td>
+                              <td className="p-4">3,000 W</td>
+                              <td className="p-4">5,000 W</td>
+                              <td className="p-4">8,000 W</td>
+                              <td className="p-4 font-bold text-primary">10,000 W</td>
                             </tr>
                             <tr>
-                              <td className="p-4 font-bold bg-gray-50">Max Output Current</td>
-                              <td className="p-4">167 A</td>
-                              <td className="p-4">198 A (@800V)</td>
-                              <td className="p-4 font-bold text-primary">252 A (@800V)</td>
+                              <td className="p-4 font-bold bg-gray-50">Battery Voltage</td>
+                              <td className="p-4">48V</td>
+                              <td className="p-4">48V</td>
+                              <td className="p-4">48V</td>
+                              <td className="p-4 font-bold text-primary">48V</td>
                             </tr>
                             <tr>
-                              <td className="p-4 font-bold bg-gray-50">THDi</td>
-                              <td className="p-4">&lt; 3%</td>
-                              <td className="p-4">&lt; 3%</td>
-                              <td className="p-4 font-bold text-primary">&lt; 3%</td>
+                              <td className="p-4 font-bold bg-gray-50">Max Charging / Discharging</td>
+                              <td className="p-4">70 / 70 A</td>
+                              <td className="p-4">120 / 120 A</td>
+                              <td className="p-4">190 / 190 A</td>
+                              <td className="p-4 font-bold text-primary">210 / 210 A</td>
                             </tr>
                           </tbody>
                         </table>

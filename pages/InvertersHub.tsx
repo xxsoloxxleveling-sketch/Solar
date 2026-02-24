@@ -7,68 +7,68 @@ import { ProductPager, PagerProduct } from '../components/ProductPager';
 
 const categories = [
     {
-        title: 'Central Inverters (Utility Scale)',
-        desc: 'High-capacity conversion designed to connect massive PV farms directly to the grid with max efficiency.',
+        title: 'Hybrid Inverters (Residential)',
+        desc: 'The ultimate solution for load shedding. Manage grid, solar, and battery power seamlessly. Available in 3kW to 10kW models.',
+        icon: Home,
+        link: '/products/inverters/aes-8kw-hybrid',
+        image: '/images/hybrid_inverter.png'
+    },
+    {
+        title: 'String Inverters (Commercial & Residential)',
+        desc: 'High-efficiency inverters (2kW-50kW) ideal for net-metering in local businesses, plazas, and large homes.',
         icon: ActivitySquare,
         link: '/contact', // Placeholder until detail page exists
         image: '/images/inverter_central_1771581042359.png'
     },
     {
-        title: 'String Inverters (C&I)',
-        desc: 'Intelligent multi-MPPT string inverters with built-in AI Arc Fault detection. Up to 350kW output.',
+        title: 'Solar Pump Inverters',
+        desc: 'Built specifically for Pakistan\'s agricultural sector. Run tube wells directly on solar without batteries.',
         icon: Zap,
-        link: '/products/inverters/aes-inv',
-        image: '/images/inverter_central_1771581042359.png'
-    },
-    {
-        title: 'Hybrid Inverters (Residential)',
-        desc: 'Seamlessly manage PV generation, battery storage, and grid connection in one sleek unit.',
-        icon: Home,
         link: '/contact', // Placeholder until detail page exists
-        image: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2916&auto=format&fit=crop'
+        image: '/images/inverter_central_1771581042359.png'
     }
 ];
 
 const pagerProducts: PagerProduct[] = [
     {
-        id: 'inv-sg',
-        name: 'AES-SG Central 3.1MW',
-        marketEquivalent: 'Sungrow SG Series / SMA Sunny Central',
+        id: 'inv-hybrid-series',
+        name: 'AES-Nitrox Hybrid Series (3kW - 10kW)',
+        marketEquivalent: 'Inverex Nitrox / Growatt SPH',
         specs: [
-            { label: 'Max Output', value: '3.125 MW' },
-            { label: 'Max Efficiency', value: '99.0%' },
-            { label: 'Cooling', value: 'Smart Forced Air' },
-            { label: 'Grid Support', value: 'Q at Night, SCR > 1.2' },
+            { label: 'Power Range', value: '3kW, 5kW, 8kW, 10kW' },
+            { label: 'Net-Metering', value: 'Approved (NEPRA)' },
+            { label: 'Battery Support', value: 'Lead Acid & Lithium (48V)' },
+            { label: 'Overload', value: '200% Surge (10s)' },
         ],
-        description: 'The workhorse of utility-scale solar. Featuring modular power blocks and advanced grid-forming capabilities.',
+        description: 'Designed specifically to combat load shedding in Pakistan. This intelligent hybrid inverter provides heavy-duty backup for essential loads while exporting excess power.',
+        image: '/images/hybrid_inverter.png',
+        link: '/products/inverters/aes-8kw-hybrid'
+    },
+    {
+        id: 'inv-grid-series',
+        name: 'AES-SunGrid Series (2kW - 10kW)',
+        marketEquivalent: 'Huawei SUN2000 / Knox',
+        specs: [
+            { label: 'Power Range', value: '2kW, 3kW, 5kW, 10kW' },
+            { label: 'Phase Options', value: 'Single & Three-Phase' },
+            { label: 'Monitoring', value: 'WiFi/4G App' },
+            { label: 'Efficiency', value: '98.5%' },
+        ],
+        description: 'The perfect string inverter for net-metering applications. Optimized for safe, reliable grid export with advanced arc-fault protection and smart monitoring.',
         image: '/images/inverter_central_1771581042359.png',
         link: '/contact'
     },
     {
-        id: 'inv-sun',
-        name: 'AES-SUN Series 330K',
-        marketEquivalent: 'Huawei SUN2000-330KTL',
+        id: 'inv-pump',
+        name: 'AES-AgriPump 15kW VFD',
+        marketEquivalent: 'Veichi / INVT',
         specs: [
-            { label: 'Max Output', value: '330 kW' },
-            { label: 'MPPTs', value: 'Up to 14' },
-            { label: 'Protection', value: 'AI Arc Fault' },
-            { label: 'Diagnostics', value: 'Smart I-V Curve' },
+            { label: 'Motor Drive', value: '15 kW' },
+            { label: 'Input', value: 'Solar Vmp Tracking' },
+            { label: 'Protection', value: 'Dry Run / Overvoltage' },
+            { label: 'Design', value: 'IP65 Dust/Water Resistant' },
         ],
-        description: 'Industry-leading string inverter for C&I. Maximizes energy harvest with ultra-high MPPT density and granular monitoring.',
-        image: '/images/inverter_central_1771581042359.png',
-        link: '/products/inverters/aes-inv'
-    },
-    {
-        id: 'inv-res',
-        name: 'AES-Hybrid 10K',
-        marketEquivalent: 'SolarEdge Energy Hub / Fronius GEN24',
-        specs: [
-            { label: 'Max Output', value: '10 kW' },
-            { label: 'Battery Ready', value: 'Yes (DC-Coupled)' },
-            { label: 'Backup Power', value: 'Whole Home EPS' },
-            { label: 'Monitoring', value: 'Cloud App' },
-        ],
-        description: 'An all-in-one solution for residential energy independence, seamlessly managing solar generation, battery storage, and grid export.',
+        description: 'Empowering local farmers. A robust Variable Frequency Drive (VFD) designed to power tube wells efficiently, directly from solar panels without needing expensive batteries.',
         image: '/images/inverter_central_1771581042359.png',
         link: '/contact'
     }

@@ -44,11 +44,11 @@ const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/panels" element={<SolarPanelsHub />} />
-            <Route path="/products/panels/aes-700" element={<SolarPanels />} />
+            <Route path="/products/panels/aes-580" element={<SolarPanels />} />
             <Route path="/products/inverters" element={<InvertersHub />} />
-            <Route path="/products/inverters/aes-inv" element={<Inverters />} />
+            <Route path="/products/inverters/aes-8kw-hybrid" element={<Inverters />} />
             <Route path="/products/batteries" element={<BatteriesHub />} />
-            <Route path="/products/batteries/aes-ess-container" element={<Batteries />} />
+            <Route path="/products/batteries/aes-powerwall" element={<Batteries />} />
             <Route path="/manufacturing" element={<Manufacturing />} />
             <Route path="/manufacturing/quality" element={<QualityAssurance />} />
             <Route path="/manufacturing/tour" element={<FacilityTour />} />

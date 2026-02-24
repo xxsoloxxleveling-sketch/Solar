@@ -7,69 +7,69 @@ import { ProductPager, PagerProduct } from '../components/ProductPager';
 
 const categories = [
     {
-        title: 'Utility-Scale (Container ESS)',
-        desc: 'Massive energy reserves for grid stabilization and solar farms. Up to 3.7MWh per 20ft container.',
-        icon: Server,
-        link: '/products/batteries/aes-ess-container',
-        image: '/images/homepage_hero_desktop_1771580991310.png'
+        title: 'Wall-Mounted (Residential)',
+        desc: 'Sleek, space-saving LiFePO4 batteries designed to integrate seamlessly into your home. Available in 5kWh to 10kWh+ units.',
+        icon: Battery,
+        link: '/products/batteries/aes-powerwall',
+        image: '/images/powerwall_battery.png'
     },
     {
-        title: 'Commercial & Industrial (Cabinet ESS)',
-        desc: 'Modular, liquid-cooled 215kWh cabinets designed for peaker plant replacement and commercial backup.',
+        title: 'Server Rack (Modular)',
+        desc: 'Scalable 48V modules (2.4kWh to 5kWh) perfect for homes and small businesses needing robust, expandable backup.',
         icon: Server,
         link: '/contact', // Placeholder until detail page exists
         image: '/images/inverter_central_1771581042359.png'
     },
     {
-        title: 'Residential Storage',
-        desc: 'Stackable, intelligent LFP batteries for whole-home backup and energy independence.',
-        icon: Battery,
+        title: 'High-Voltage Stackable',
+        desc: 'Advanced C&I storage solutions for maximum efficiency and capacity expansion.',
+        icon: Zap,
         link: '/contact', // Placeholder until detail page exists
-        image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2944&auto=format&fit=crop'
+        image: '/images/homepage_hero_desktop_1771580991310.png'
     }
 ];
 
 const pagerProducts: PagerProduct[] = [
     {
-        id: 'bat-mega',
-        name: 'AES-MegaBlock 3.7MWh',
-        marketEquivalent: 'Tesla Megapack / Sungrow PowerTitan',
+        id: 'bat-wall-series',
+        name: 'AES-PowerWall Series (5kWh - 10kWh)',
+        marketEquivalent: 'Pylontech / BYD Battery-Box',
         specs: [
-            { label: 'Capacity', value: '3.72 MWh' },
-            { label: 'Cell Type', value: 'LFP (Lithium Iron Phosphate)' },
-            { label: 'Cooling', value: 'Liquid Cooled' },
-            { label: 'Cycle Life', value: '10,000+ Cycles' },
+            { label: 'Capacity Options', value: '5.12 kWh & 10.24 kWh' },
+            { label: 'Cell Type', value: 'LiFePO4 (Grade A+)' },
+            { label: 'Cycle Life', value: '6,000+ Cycles @ 80% DoD' },
+            { label: 'Design', value: 'Wall-Mounted Ultra Slim' },
         ],
-        description: 'Massive, scalable energy storage for utility projects. Delivered pre-assembled in an IP55 rated enclosure for immediate grid connection.',
-        image: '/images/homepage_hero_desktop_1771580991310.png',
-        link: '/products/batteries/aes-ess-container'
+        description: 'The premier choice for Pakistani households seeking reliable backup against load shedding. Available in multiple capacities to fit any home size.',
+        image: '/images/powerwall_battery.png',
+        link: '/products/batteries/aes-powerwall'
     },
     {
-        id: 'bat-cni',
-        name: 'AES-Cabinet ESS 215kWh',
-        marketEquivalent: 'Huawei LUNA2000 C&I / BYD CHESS',
+        id: 'bat-rack',
+        name: 'AES-RackBlade Series',
+        marketEquivalent: 'Narada / Knox / Topak',
         specs: [
-            { label: 'Capacity', value: '215 kWh' },
-            { label: 'Scalability', value: 'Up to 10 Units Series' },
-            { label: 'Safety', value: 'Aerosol Fire Suppression' },
-            { label: 'Footprint', value: 'Compact Outdoor' },
+            { label: 'Module Sizes', value: '2.4 kWh, 4.8 kWh, 5.12 kWh' },
+            { label: 'Scalability', value: 'Up to 15 Units in Parallel' },
+            { label: 'BMS', value: 'Intelligent AI-Driven BMS' },
+            { label: 'Installation', value: 'Standard 19" Server Rack' },
         ],
-        description: 'The ultimate commercial backup and peak-shaving solution. Modular design allows for precise capacity scaling to match facility needs.',
+        description: 'Highly modular and cost-effective. Start small and expand your storage as your energy needs grow. Fully compatible with top hybrid inverter brands.',
         image: '/images/inverter_central_1771581042359.png',
         link: '/contact'
     },
     {
-        id: 'bat-res',
-        name: 'AES-PowerWall 10kWh',
-        marketEquivalent: 'Tesla Powerwall / LG Chem RESU',
+        id: 'bat-cni',
+        name: 'AES-Stack C&I 50kWh',
+        marketEquivalent: 'Huawei LUNA / Sungrow',
         specs: [
-            { label: 'Capacity', value: '10.2 kWh' },
-            { label: 'Continuous Output', value: '5 kW' },
-            { label: 'Design', value: 'Wall-Mounted' },
-            { label: 'Chemistry', value: 'Safe LFP Technology' },
+            { label: 'Capacity', value: '50 kWh' },
+            { label: 'Voltage', value: 'High Voltage (HV)' },
+            { label: 'Cooling', value: 'Smart Thermal Management' },
+            { label: 'Footprint', value: 'Compact Stackable' },
         ],
-        description: 'Reliable residential backup. Ensures critical loads remain powered during outages and maximizes solar self-consumption.',
-        image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2944&auto=format&fit=crop',
+        description: 'Powerful backup for commercial plazas and industrial units. Reduces reliance on diesel generators and maximizes solar self-consumption.',
+        image: '/images/homepage_hero_desktop_1771580991310.png',
         link: '/contact'
     }
 ];

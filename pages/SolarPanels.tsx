@@ -23,24 +23,24 @@ const SolarPanels: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <span className="text-secondary font-bold uppercase tracking-[0.2em] text-sm">PV Modules</span>
-              <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-none">AES-700 <br /><span className="text-gray-400">N-Type TOPCon</span></h1>
+              <span className="text-secondary font-bold uppercase tracking-[0.2em] text-sm">Premium Residential & C&I</span>
+              <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-none">AES-Vertex <br /><span className="text-gray-400">Pro Series</span></h1>
               <p className="text-xl text-gray-300 max-w-lg leading-relaxed">
-                Ultra-high efficiency bifacial modules designed for utility-scale solar farms. Engineered for maximum energy yield.
+                Premium N-Type TOPCon bifacial modules designed for high-yield solar systems. Engineered for maximum energy generation across a wide range of capacities (430W - 600W+).
               </p>
 
               <div className="flex gap-8 py-6">
                 <div>
-                  <p className="text-4xl font-heading font-bold text-white">22.8%</p>
-                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Efficiency</p>
+                  <p className="text-4xl font-heading font-bold text-white">Up to 23.2%</p>
+                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Max Efficiency</p>
                 </div>
                 <div>
                   <p className="text-4xl font-heading font-bold text-white">30<span className="text-xl">yr</span></p>
-                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Warranty</p>
+                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Power Warranty</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-heading font-bold text-white">700<span className="text-xl">W</span></p>
-                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Max Power</p>
+                  <p className="text-4xl font-heading font-bold text-white">430-600<span className="text-xl">W</span></p>
+                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Power Range</p>
                 </div>
               </div>
 
@@ -55,7 +55,7 @@ const SolarPanels: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative h-[400px] lg:h-[600px] flex items-center justify-center"
             >
-              <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2916&auto=format&fit=crop" className="max-h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" alt="Solar Panel Product" />
+              <img src="/images/solar_panel_pro.png" className="max-h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" alt="Solar Panel Product" />
             </motion.div>
           </div>
         </div>
@@ -144,23 +144,23 @@ const SolarPanels: React.FC = () => {
                           <thead className="bg-primary text-white">
                             <tr>
                               <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">Model Type</th>
-                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-550M</th>
-                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-670N</th>
-                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-700N</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-Vertex 430W</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-Vertex 540W</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-Vertex 580W Pro</th>
                             </tr>
                           </thead>
                           <tbody className="divide-y divide-gray-100 text-sm text-gray-700">
                             <tr>
                               <td className="p-4 font-bold bg-gray-50">Max Power Output (Pmax)</td>
-                              <td className="p-4">550 W</td>
-                              <td className="p-4">670 W</td>
-                              <td className="p-4 font-bold text-primary">700 W</td>
+                              <td className="p-4">430 W</td>
+                              <td className="p-4">540 W</td>
+                              <td className="p-4 font-bold text-primary">585 W</td>
                             </tr>
                             <tr>
                               <td className="p-4 font-bold bg-gray-50">Module Efficiency</td>
                               <td className="p-4">21.5%</td>
-                              <td className="p-4">22.3%</td>
-                              <td className="p-4 font-bold text-primary">22.8%</td>
+                              <td className="p-4">21.2%</td>
+                              <td className="p-4 font-bold text-primary">22.6%</td>
                             </tr>
                             <tr>
                               <td className="p-4 font-bold bg-gray-50">Operating Temp</td>
@@ -179,22 +179,38 @@ const SolarPanels: React.FC = () => {
                     content: (
                       <div className="overflow-x-auto">
                         <table className="w-full border-collapse">
+                          <thead className="bg-primary text-white">
+                            <tr>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">Model Type</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-Vertex 430W</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-Vertex 540W</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-Vertex 580W Pro</th>
+                            </tr>
+                          </thead>
                           <tbody className="divide-y divide-gray-100 text-sm text-gray-700">
                             <tr>
-                              <td className="p-4 font-bold bg-gray-50 w-1/3">Dimensions (mm)</td>
-                              <td className="p-4">2384 x 1303 x 33</td>
+                              <td className="p-4 font-bold bg-gray-50 w-1/4">Dimensions (mm)</td>
+                              <td className="p-4">1722 x 1134 x 30</td>
+                              <td className="p-4">2278 x 1134 x 30</td>
+                              <td className="p-4">2278 x 1134 x 30</td>
                             </tr>
                             <tr>
                               <td className="p-4 font-bold bg-gray-50">Weight</td>
-                              <td className="p-4">34.0 kg</td>
+                              <td className="p-4">22.0 kg</td>
+                              <td className="p-4">28.6 kg</td>
+                              <td className="p-4">28.6 kg</td>
                             </tr>
                             <tr>
                               <td className="p-4 font-bold bg-gray-50">Cell Type</td>
-                              <td className="p-4">N-Type TOPCon</td>
+                              <td className="p-4">108 (6x18) Half-Cut</td>
+                              <td className="p-4">144 (6x24) Half-Cut</td>
+                              <td className="p-4">144 (6x24) N-Type TOPCon</td>
                             </tr>
                             <tr>
                               <td className="p-4 font-bold bg-gray-50">Front Glass</td>
-                              <td className="p-4">2.0mm, Anti-Reflection Coating</td>
+                              <td className="p-4">2.0mm, ARC</td>
+                              <td className="p-4">2.0mm, ARC</td>
+                              <td className="p-4">2.0mm, ARC</td>
                             </tr>
                           </tbody>
                         </table>

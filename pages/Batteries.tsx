@@ -26,24 +26,24 @@ const Batteries: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <span className="text-secondary font-bold uppercase tracking-[0.2em] text-sm">Energy Storage</span>
-              <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-none">AES-ESS <br /><span className="text-gray-400">Utility Scale</span></h1>
+              <span className="text-secondary font-bold uppercase tracking-[0.2em] text-sm">Residential Storage</span>
+              <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-none">AES-PowerWall <br /><span className="text-gray-400">Series (5-10kWh)</span></h1>
               <p className="text-xl text-gray-300 max-w-lg leading-relaxed">
-                Liquid-cooled Lithium Iron Phosphate (LFP) battery systems designed for safety, longevity, and massive scalability.
+                Ultra-slim wall-mounted lithium batteries designed to banish load shedding. Safe, smart, and scalable for uninterrupted power.
               </p>
 
               <div className="flex gap-8 py-6">
                 <div>
                   <p className="text-4xl font-heading font-bold text-white">6000<span className="text-xl">+</span></p>
-                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Cycles @ 80% EOL</p>
+                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Cycles @ 80% DoD</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-heading font-bold text-white">3.7<span className="text-xl">MWh</span></p>
-                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Container Cap.</p>
+                  <p className="text-4xl font-heading font-bold text-white">10.2<span className="text-xl">kWh</span></p>
+                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Max Capacity/Unit</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-heading font-bold text-white">20<span className="text-xl">yr</span></p>
-                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Design Life</p>
+                  <p className="text-4xl font-heading font-bold text-white">10<span className="text-xl">yr</span></p>
+                  <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Warranty</p>
                 </div>
               </div>
 
@@ -58,7 +58,7 @@ const Batteries: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative h-[400px] lg:h-[600px] flex items-center justify-center"
             >
-              <img src="https://images.unsplash.com/photo-1611416517780-eff3a13b0359?q=80&w=3149&auto=format&fit=crop" className="max-h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 rounded-lg" alt="Battery Container" />
+              <img src="/images/powerwall_battery.png" className="max-h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 rounded-lg" alt="Battery Wall" />
             </motion.div>
           </div>
         </div>
@@ -96,10 +96,10 @@ const Batteries: React.FC = () => {
             <h3 className="text-2xl font-bold text-gray-900">Safety & Intelligence</h3>
             <div className="grid grid-cols-1 gap-6">
               {[
-                { title: 'LFP Chemistry', desc: 'Thermally stable Lithium Iron Phosphate cells prevent thermal runaway.', icon: Shield },
-                { title: 'Liquid Cooling', desc: 'Precision temperature control (diff <2°C) extends battery life by 20%.', icon: Thermometer },
-                { title: 'Smart BMS', desc: 'Cell-level monitoring with active balancing and cloud integration.', icon: Zap },
-                { title: 'Modular Design', desc: 'Scalable from 100kWh cabinets to multi-MWh containers.', icon: Battery }
+                { title: 'Grade A+ LFP Cells', desc: 'The safest lithium chemistry available. No fire risk, no maintenance, zero emissions.', icon: Shield },
+                { title: 'Zero Maintenance', desc: 'No more adding water or checking acid levels compared to traditional tubular batteries.', icon: Thermometer },
+                { title: 'Plug & Play BMS', desc: 'Seamless communication with top inverter brands (Inverex, Knox, Growatt).', icon: Zap },
+                { title: 'Ultra-Fast Charging', desc: 'Recharges 5x faster than lead-acid batteries, perfect for short gap periods between load shedding.', icon: Battery }
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -145,30 +145,35 @@ const Batteries: React.FC = () => {
                           <thead className="bg-primary text-white">
                             <tr>
                               <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">Model</th>
-                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-ESS-Cabinet</th>
-                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-ESS-Container</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-PowerWall 2.5K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-PowerWall 5K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-PowerWall 10K</th>
                             </tr>
                           </thead>
                           <tbody className="divide-y divide-gray-100 text-sm text-gray-700">
                             <tr>
                               <td className="p-4 font-bold bg-gray-50">Energy Capacity</td>
-                              <td className="p-4">215 kWh</td>
-                              <td className="p-4 font-bold text-primary">3.72 MWh</td>
+                              <td className="p-4">2.56 kWh</td>
+                              <td className="p-4">5.12 kWh</td>
+                              <td className="p-4 font-bold text-primary">10.24 kWh</td>
                             </tr>
                             <tr>
-                              <td className="p-4 font-bold bg-gray-50">Rated Power</td>
-                              <td className="p-4">100 kW</td>
-                              <td className="p-4">1800 kW</td>
+                              <td className="p-4 font-bold bg-gray-50">Nominal Voltage</td>
+                              <td className="p-4">25.6 V / 51.2 V</td>
+                              <td className="p-4">51.2 V</td>
+                              <td className="p-4">51.2 V</td>
                             </tr>
                             <tr>
                               <td className="p-4 font-bold bg-gray-50">Battery Chemistry</td>
                               <td className="p-4">LFP (LiFePO4)</td>
                               <td className="p-4">LFP (LiFePO4)</td>
+                              <td className="p-4">LFP (LiFePO4)</td>
                             </tr>
                             <tr>
-                              <td className="p-4 font-bold bg-gray-50">Cooling System</td>
-                              <td className="p-4">Liquid Cooling</td>
-                              <td className="p-4">Liquid Cooling</td>
+                              <td className="p-4 font-bold bg-gray-50">Max Discharge/Charge</td>
+                              <td className="p-4">50A / 50A</td>
+                              <td className="p-4">100A / 100A</td>
+                              <td className="p-4">100A / 100A</td>
                             </tr>
                           </tbody>
                         </table>
@@ -184,25 +189,29 @@ const Batteries: React.FC = () => {
                           <thead className="bg-primary text-white">
                             <tr>
                               <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">Model</th>
-                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-ESS-Cabinet</th>
-                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-ESS-Container</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-PowerWall 2.5K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider">AES-PowerWall 5K</th>
+                              <th className="p-4 text-left text-sm font-bold uppercase tracking-wider text-secondary">AES-PowerWall 10K</th>
                             </tr>
                           </thead>
                           <tbody className="divide-y divide-gray-100 text-sm text-gray-700">
                             <tr>
                               <td className="p-4 font-bold bg-gray-50">Dimensions (WxHxD)</td>
-                              <td className="p-4">1100 x 2200 x 1100 mm</td>
-                              <td className="p-4 font-bold text-primary">6058 x 2896 x 2438 mm (20ft)</td>
+                              <td className="p-4">400 x 450 x 135 mm</td>
+                              <td className="p-4">480 x 600 x 150 mm</td>
+                              <td className="p-4 font-bold text-primary">480 x 850 x 200 mm</td>
                             </tr>
                             <tr>
                               <td className="p-4 font-bold bg-gray-50">Weight</td>
-                              <td className="p-4">~2,500 kg</td>
-                              <td className="p-4">~35,000 kg</td>
+                              <td className="p-4">~28 kg</td>
+                              <td className="p-4">~50 kg</td>
+                              <td className="p-4">~95 kg</td>
                             </tr>
                             <tr>
-                              <td className="p-4 font-bold bg-gray-50">IP Rating</td>
-                              <td className="p-4">IP55</td>
-                              <td className="p-4">IP54</td>
+                              <td className="p-4 font-bold bg-gray-50">Installation</td>
+                              <td className="p-4">Wall Mount</td>
+                              <td className="p-4">Wall Mount / Floor Stand</td>
+                              <td className="p-4">Wall Mount / Floor Stand</td>
                             </tr>
                           </tbody>
                         </table>
